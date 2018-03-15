@@ -7,6 +7,11 @@ import java.util.Scanner;
  */
 public class Input
 {
+    public int getInt(){
+        Scanner sc = new Scanner(System.in);
+        return sc.nextInt();
+    }
+    
     public String getString(){
         Scanner sc = new Scanner(System.in);
         return sc.next();
