@@ -1,13 +1,14 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class User here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Dominic Byers
+ * @version v1
  */
 public class User
 {
     String username, password;
+    ArrayList<String> posts = new ArrayList<String>();
     public User(String user, String pass)
     {
         username = user;
@@ -20,5 +21,9 @@ public class User
     public String getPassword()
     {
         return password;
+    }
+    public void addPost(String s)
+    {
+        posts.add(s);
     }
 }
