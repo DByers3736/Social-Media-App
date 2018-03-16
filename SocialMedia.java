@@ -58,11 +58,7 @@ public class SocialMedia{
     }
 
     public  void printPost(ArrayList<String> list){
-
-        for(int i = 0; i < list.size(); i++){
-            int num = i + 1;
-            System.out.println(num + ". " + list.get(i));
-        }
+        printList.printArray(list);
     }
 
 }
