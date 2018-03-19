@@ -24,6 +24,6 @@ public class User
     }
     public void Post(String s)
     {
-        posts.add("testing");
+        posts.add(s);
     }
 }

@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
@@ -9,18 +10,18 @@ import java.util.Scanner;
 public class ChangeUser
 {
     // Creates an arraylist of the User class and the scanner that will be used in the methods below
-    static ArrayList<User> users = new ArrayList<User>();
-    static Scanner in = new Scanner(System.in);
+     ArrayList<User> users = new ArrayList<User>();
+     Scanner in = new Scanner(System.in);
     // User object is the current user
-    static User currentUser;
+     User currentUser;
     /**
      * Makes sure it runs the correct code for registering or signing up
      */
-    public static void runUser()
+    public  void runUser()
     {
         System.out.println("Do you want to sign in or register? (sign in should be seperate)");
         String statement = in.nextLine();
-        if (statement.equalsIgnoreCase("sign in"))
+        if (statement.equalsIgnoreCase("sign in")|| statement.equalsIgnoreCase("signin"))
         {
             changeUser();
         }
@@ -36,7 +37,7 @@ public class ChangeUser
     /**
      * Signs in the user if no user is signed in or changes the user if one is already signed in
      */
-    public static void changeUser()
+    public void changeUser()
     {
         System.out.println("Type your username");
         String username = in.nextLine();
@@ -73,7 +74,7 @@ public class ChangeUser
     /**
      * Registers a new user to the arraylist
      */
-    public static void register()
+    public  void register()
     {
         System.out.println("Choose a username for your account");
         String regUser = in.nextLine();
@@ -85,8 +86,9 @@ public class ChangeUser
             users.add(new User(regUser, regPass));
         }
     }
-    public static User getCurrentUser()
+    public User getCurrentUser()
     {
         return currentUser;
+        
     }
 }

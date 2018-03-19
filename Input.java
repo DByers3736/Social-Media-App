@@ -11,10 +11,12 @@ public class Input
         Scanner sc = new Scanner(System.in);
         return sc.nextInt();
     }
+
     public String getString(){
         Scanner sc = new Scanner(System.in);
         return sc.next();
     }
+
     public String getLine(){
         Scanner sc = new Scanner(System.in);
         return sc.nextLine();
