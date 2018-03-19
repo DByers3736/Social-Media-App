@@ -14,9 +14,29 @@ public class ChangeUser
     // User object is the current user
     static User currentUser;
     /**
+     * Makes sure it runs the correct code for registering or signing up
+     */
+    public static void runUser()
+    {
+        System.out.println("Do you want to sign in or register? (sign in should be seperate)");
+        String statement = in.nextLine();
+        if (statement.equalsIgnoreCase("sign in"))
+        {
+            changeUser();
+        }
+        else if (statement.equalsIgnoreCase("register"))
+        {
+            register();
+        }
+        else
+        {
+            runUser();
+        }
+    }
+    /**
      * Signs in the user if no user is signed in or changes the user if one is already signed in
      */
-    public void changeUser()
+    public static void changeUser()
     {
         System.out.println("Type your username");
         String username = in.nextLine();
@@ -33,18 +53,20 @@ public class ChangeUser
                 // If not, it says that was an incorrect password
                 if (password.equalsIgnoreCase(users.get(i).getPassword()))
                 {
+                    System.out.println("Signed in successfully");
                     currentUser = users.get(i);
                     break;
                 }
                 else
                 {
                     System.out.println("The password did not match");
-                    break;
+                    changeUser();
                 }
             }
             else if (i == users.size() - 1) // Checks to see if we're at the end of the iteration, if we are, and the username hasn't equaled any of the users, then it says that the user doesn't exist
             {
                 System.out.println("That user does not exist");
+                changeUser();
             }
         }
     }

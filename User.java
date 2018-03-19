@@ -22,8 +22,8 @@ public class User
     {
         return password;
     }
-    public void addPost(String s)
+    public void Post(String s)
     {
-        posts.add(s);
+        posts.add("testing");
     }
 }
